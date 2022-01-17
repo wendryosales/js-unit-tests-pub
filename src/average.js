@@ -12,8 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  test
+const average = (ameba) => {
+  let result = 0;
+  if (ameba.length === 0) {
+    return undefined;
+  }
+  for (let i of ameba) {
+    result += i;
+    if (i === '' || typeof i === 'string') {
+      return undefined;
+    }
+  }
+  let media = Math.round(result / ameba.length);
+  return media;
 };
+
+console.log(average([]));
 
 module.exports = average;
